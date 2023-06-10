@@ -369,7 +369,6 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/MenuController.cs"
-"Assets/Scripts/MANAGERS/PlayerManager.cs"
 -langversion:9.0
 
 /deterministic
