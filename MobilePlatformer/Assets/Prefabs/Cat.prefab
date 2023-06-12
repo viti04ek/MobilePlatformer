@@ -171,3 +171,4 @@ MonoBehaviour:
   JumpSpeed: 600
   Rigidbody2D: {fileID: 9091869369997400400}
   SpriteRenderer: {fileID: 9091869369997400402}
+  Animator: {fileID: 9091869369997400405}
