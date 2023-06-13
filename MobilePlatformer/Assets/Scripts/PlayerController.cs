@@ -22,11 +22,10 @@ public class PlayerController : MonoBehaviour
     private bool _canDoubleJump;
     public float DelayForDoubleJump;
 
-
-    private void Start()
-    {
-        
-    }
+    public Transform LeftBulletSpawn;
+    public Transform RightBulletSpawn;
+    public GameObject LeftBullet;
+    public GameObject RightBullet;
 
     
     private void Update()
@@ -43,6 +42,9 @@ public class PlayerController : MonoBehaviour
             Jump();
 
         ShowFalling();
+
+        if (Input.GetButtonDown("Fire1"))
+            FireBullets();
     }
 
 
@@ -108,14 +110,21 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
-        {
             _isJumping = false;
-        }
     }
 
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(Feet.position, new Vector3(BoxWidth, BoxHeight, 0));
+    }
+
+
+    private void FireBullets()
+    {
+        if (SpriteRenderer.flipX)
+            Instantiate(LeftBullet, LeftBulletSpawn.position, Quaternion.identity);
+        else
+            Instantiate(RightBullet, RightBulletSpawn.position, Quaternion.identity);
     }
 }
