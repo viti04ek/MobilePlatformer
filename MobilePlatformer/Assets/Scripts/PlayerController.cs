@@ -13,6 +13,12 @@ public class PlayerController : MonoBehaviour
     public Animator Animator;
     private bool _isJumping;
 
+    private bool _isGrounded;
+    public Transform Feet;
+    public float BoxWidth;
+    public float BoxHeight;
+    public LayerMask WhatIsGround;
+
 
     private void Start()
     {
@@ -22,6 +28,8 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
+        _isGrounded = Physics2D.OverlapBox(new Vector2(Feet.position.x, Feet.position.y), new Vector2(BoxWidth, BoxHeight), 360f, WhatIsGround);
+
         float playerSpeed = Input.GetAxisRaw("Horizontal");
         if (playerSpeed != 0)
             MoveHorizontal(playerSpeed * SpeedBoost);
@@ -60,9 +68,12 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        _isJumping = true;
-        Rigidbody2D.AddForce(new Vector2(0, JumpSpeed));
-        Animator.SetInteger("State", 2);
+        if (_isGrounded)
+        {
+            _isJumping = true;
+            Rigidbody2D.AddForce(new Vector2(0, JumpSpeed));
+            Animator.SetInteger("State", 2);
+        }
     }
 
 
@@ -81,5 +92,11 @@ public class PlayerController : MonoBehaviour
         {
             _isJumping = false;
         }
+    }
+
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(Feet.position, new Vector3(BoxWidth, BoxHeight, 0));
     }
 }
