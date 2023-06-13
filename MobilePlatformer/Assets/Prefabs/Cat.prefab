@@ -210,3 +210,4 @@ MonoBehaviour:
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  DelayForDoubleJump: 0.2

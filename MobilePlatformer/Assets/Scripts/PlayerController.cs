@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     public float BoxHeight;
     public LayerMask WhatIsGround;
 
+    private bool _canDoubleJump;
+    public float DelayForDoubleJump;
+
 
     private void Start()
     {
@@ -73,7 +76,23 @@ public class PlayerController : MonoBehaviour
             _isJumping = true;
             Rigidbody2D.AddForce(new Vector2(0, JumpSpeed));
             Animator.SetInteger("State", 2);
+
+            Invoke("EnableDoubleJump", DelayForDoubleJump);
         }
+
+        if (_canDoubleJump && !_isGrounded)
+        {
+            Rigidbody2D.velocity = Vector2.zero;
+            Rigidbody2D.AddForce(new Vector2(0, JumpSpeed));
+            Animator.SetInteger("State", 2);
+            _canDoubleJump = false;
+        }
+    }
+
+
+    private void EnableDoubleJump()
+    {
+        _canDoubleJump = true;
     }
 
 
