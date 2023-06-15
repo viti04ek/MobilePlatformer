@@ -23,4 +23,16 @@ public class UIController : MonoBehaviour
     {
         PlayerController.MoveStop();
     }
+
+
+    public void Fire()
+    {
+        PlayerController.Fire();
+    }
+
+
+    public void Jump()
+    {
+        PlayerController.JumpBtn();
+    }
 }

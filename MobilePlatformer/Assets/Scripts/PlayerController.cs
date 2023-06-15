@@ -155,4 +155,16 @@ public class PlayerController : MonoBehaviour
         _leftPressed = false;
         _rightPressed = false;
     }
+
+
+    public void Fire()
+    {
+        FireBullets();
+    }
+
+
+    public void JumpBtn()
+    {
+        Jump();
+    }
 }
