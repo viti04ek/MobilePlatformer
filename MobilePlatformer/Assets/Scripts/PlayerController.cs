@@ -27,6 +27,9 @@ public class PlayerController : MonoBehaviour
     public GameObject LeftBullet;
     public GameObject RightBullet;
 
+    private bool _leftPressed;
+    private bool _rightPressed;
+
     
     private void Update()
     {
@@ -45,6 +48,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
             FireBullets();
+
+        if (_leftPressed)
+            MoveHorizontal(-SpeedBoost);
+
+        if (_rightPressed)
+            MoveHorizontal(SpeedBoost);
     }
 
 
@@ -126,5 +135,24 @@ public class PlayerController : MonoBehaviour
             Instantiate(LeftBullet, LeftBulletSpawn.position, Quaternion.identity);
         else
             Instantiate(RightBullet, RightBulletSpawn.position, Quaternion.identity);
+    }
+
+
+    public void MoveLeft()
+    {
+        _leftPressed = true;
+    }
+
+
+    public void MoveRight()
+    {
+        _rightPressed = true;
+    }
+
+
+    public void MoveStop()
+    {
+        _leftPressed = false;
+        _rightPressed = false;
     }
 }

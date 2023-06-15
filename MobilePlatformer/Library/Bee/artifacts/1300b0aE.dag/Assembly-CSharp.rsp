@@ -373,6 +373,7 @@
 "Assets/Scripts/MenuController.cs"
 "Assets/Scripts/PlayerBulletController.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/UIController.cs"
 -langversion:9.0
 
 /deterministic
