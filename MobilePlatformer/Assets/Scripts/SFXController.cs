@@ -20,4 +20,10 @@ public class SFXController : MonoBehaviour
     {
         Instantiate(SFX.SFXCoinPickup, position, Quaternion.identity);
     }
+
+
+    public void ShowBulletSparkle(Vector3 position)
+    {
+        Instantiate(SFX.SFXBulletPickup, position, Quaternion.identity);
+    }
 }

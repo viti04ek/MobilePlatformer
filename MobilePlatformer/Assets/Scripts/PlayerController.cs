@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
 
     public bool SFXOn;
 
+    public bool CanFire;
+
     
     private void Update()
     {
@@ -133,6 +135,14 @@ public class PlayerController : MonoBehaviour
                 if (SFXOn)
                     SFXController.Instance.ShowCoinSparkle(collision.gameObject.transform.position);
                 break;
+
+            case "PowerupBullet":
+                CanFire = true;
+                Vector3 position = collision.gameObject.transform.position;
+                Destroy(collision.gameObject);
+                if (SFXOn)
+                    SFXController.Instance.ShowBulletSparkle(position);
+                break;
         }
     }
 
@@ -145,10 +155,13 @@ public class PlayerController : MonoBehaviour
 
     private void FireBullets()
     {
-        if (SpriteRenderer.flipX)
-            Instantiate(LeftBullet, LeftBulletSpawn.position, Quaternion.identity);
-        else
-            Instantiate(RightBullet, RightBulletSpawn.position, Quaternion.identity);
+        if (CanFire)
+        {
+            if (SpriteRenderer.flipX)
+                Instantiate(LeftBullet, LeftBulletSpawn.position, Quaternion.identity);
+            else
+                Instantiate(RightBullet, RightBulletSpawn.position, Quaternion.identity);
+        }
     }
 
 

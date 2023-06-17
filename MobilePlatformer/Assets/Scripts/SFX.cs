@@ -8,4 +8,5 @@ using UnityEngine;
 public class SFX
 {
     public GameObject SFXCoinPickup;
+    public GameObject SFXBulletPickup;
 }

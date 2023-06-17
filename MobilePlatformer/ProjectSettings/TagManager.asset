@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - PlayerFeet
   - Coin
+  - PowerupBullet
   layers:
   - Default
   - TransparentFX
