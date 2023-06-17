@@ -4418,7 +4418,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9cde89e1d63c7478cf16afde813ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SFXCoinPickup: {fileID: 116108, guid: 520a250d5ad784c9daafddc2a8d8db7b, type: 3}
+  SFX:
+    SFXCoinPickup: {fileID: 116108, guid: 520a250d5ad784c9daafddc2a8d8db7b, type: 3}
 --- !u!1001 &584695745
 PrefabInstance:
   m_ObjectHideFlags: 0

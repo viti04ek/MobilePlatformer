@@ -279,3 +279,4 @@ MonoBehaviour:
   RightBulletSpawn: {fileID: 6872014359072288973}
   LeftBullet: {fileID: 6248393302363825266, guid: eb49cc188ca45324593fadb91d0f1704, type: 3}
   RightBullet: {fileID: 6248393302363825266, guid: 4d35ad5ed28e4cd44bfdb3b02581e66d, type: 3}
+  SFXOn: 1

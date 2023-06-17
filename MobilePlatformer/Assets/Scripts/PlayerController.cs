@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     private bool _leftPressed;
     private bool _rightPressed;
 
+    public bool SFXOn;
+
     
     private void Update()
     {
@@ -128,7 +130,8 @@ public class PlayerController : MonoBehaviour
         switch(collision.gameObject.tag)
         {
             case "Coin":
-                SFXController.Instance.ShowCoinSparkle(collision.gameObject.transform.position);
+                if (SFXOn)
+                    SFXController.Instance.ShowCoinSparkle(collision.gameObject.transform.position);
                 break;
         }
     }

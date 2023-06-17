@@ -6,7 +6,7 @@ public class SFXController : MonoBehaviour
 {
     public static SFXController Instance;
 
-    public GameObject SFXCoinPickup;
+    public SFX SFX;
 
 
     private void Awake()
@@ -18,6 +18,6 @@ public class SFXController : MonoBehaviour
     
     public void ShowCoinSparkle(Vector3 position)
     {
-        Instantiate(SFXCoinPickup, position, Quaternion.identity);
+        Instantiate(SFX.SFXCoinPickup, position, Quaternion.identity);
     }
 }

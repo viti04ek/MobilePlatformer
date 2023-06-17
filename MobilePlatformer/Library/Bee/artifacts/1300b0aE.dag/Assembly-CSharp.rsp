@@ -375,6 +375,7 @@
 "Assets/Scripts/PlayerBulletController.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/Samples/SamplePlatform.cs"
+"Assets/Scripts/SFX.cs"
 "Assets/Scripts/SFXController.cs"
 "Assets/Scripts/UIController.cs"
 -langversion:9.0
