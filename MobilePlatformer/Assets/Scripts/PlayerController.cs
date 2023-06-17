@@ -123,6 +123,17 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        switch(collision.gameObject.tag)
+        {
+            case "Coin":
+                SFXController.Instance.ShowCoinSparkle(collision.gameObject.transform.position);
+                break;
+        }
+    }
+
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(Feet.position, new Vector3(BoxWidth, BoxHeight, 0));
