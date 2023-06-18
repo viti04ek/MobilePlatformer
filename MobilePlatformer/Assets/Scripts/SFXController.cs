@@ -26,4 +26,10 @@ public class SFXController : MonoBehaviour
     {
         Instantiate(SFX.SFXBulletPickup, position, Quaternion.identity);
     }
+
+
+    public void ShowPlayerLanding(Vector3 position)
+    {
+        Instantiate(SFX.SFXPlayerLands, position, Quaternion.identity);
+    }
 }

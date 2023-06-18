@@ -4426,6 +4426,7 @@ MonoBehaviour:
   SFX:
     SFXCoinPickup: {fileID: 116108, guid: 520a250d5ad784c9daafddc2a8d8db7b, type: 3}
     SFXBulletPickup: {fileID: 113666, guid: e08af543c29d74f4dac3bd4e7a6fa1f0, type: 3}
+    SFXPlayerLands: {fileID: 159234, guid: 7a5b70226ffc04e8196c93d1bb513e05, type: 3}
 --- !u!1001 &584695745
 PrefabInstance:
   m_ObjectHideFlags: 0

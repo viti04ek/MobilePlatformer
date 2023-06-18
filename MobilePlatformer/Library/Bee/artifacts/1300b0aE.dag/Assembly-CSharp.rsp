@@ -371,6 +371,7 @@
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/CoinController.cs"
 "Assets/Scripts/DestroyWithDelay.cs"
+"Assets/Scripts/FeetController.cs"
 "Assets/Scripts/MenuController.cs"
 "Assets/Scripts/PlayerBulletController.cs"
 "Assets/Scripts/PlayerController.cs"

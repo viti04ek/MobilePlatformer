@@ -9,4 +9,5 @@ public class SFX
 {
     public GameObject SFXCoinPickup;
     public GameObject SFXBulletPickup;
+    public GameObject SFXPlayerLands;
 }
