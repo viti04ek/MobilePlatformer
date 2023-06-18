@@ -6,6 +6,13 @@ public class GarbageController : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(collision.gameObject);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameController.Instance.PlayerDied(collision.gameObject);
+        }
+        else
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
