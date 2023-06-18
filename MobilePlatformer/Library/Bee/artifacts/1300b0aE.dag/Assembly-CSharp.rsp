@@ -373,6 +373,8 @@
 "Assets/Scripts/DestroyWithDelay.cs"
 "Assets/Scripts/FeetController.cs"
 "Assets/Scripts/FragmentController.cs"
+"Assets/Scripts/GameController.cs"
+"Assets/Scripts/GarbageController.cs"
 "Assets/Scripts/HeadController.cs"
 "Assets/Scripts/MenuController.cs"
 "Assets/Scripts/PlayerBulletController.cs"
