@@ -55,4 +55,10 @@ public class SFXController : MonoBehaviour
         Instantiate(SFX.SFXFragment2, pos3, Quaternion.identity);
         Instantiate(SFX.SFXFragment1, pos4, Quaternion.identity);
     }
+
+
+    public void ShowSplash(Vector3 position)
+    {
+        Instantiate(SFX.SFXSplash, position, Quaternion.identity);
+    }
 }

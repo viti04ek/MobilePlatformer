@@ -179,9 +179,10 @@ GameObject:
   - component: {fileID: 31481438}
   - component: {fileID: 31481440}
   - component: {fileID: 31481439}
+  - component: {fileID: 31481441}
   m_Layer: 8
   m_Name: Water
-  m_TagString: Enemy
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,9 +240,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1096070993
+  m_SortingLayer: 1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.13999999, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -3556,6 +3557,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &31481441
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31481437}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
 --- !u!4 &32027488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5243351923097651164, guid: f37f5642d7e8cdb4a848f8209805c0f5, type: 3}
@@ -4429,6 +4446,7 @@ MonoBehaviour:
     SFXPlayerLands: {fileID: 159234, guid: 7a5b70226ffc04e8196c93d1bb513e05, type: 3}
     SFXFragment1: {fileID: 3463115519308800935, guid: 8c89e8a6181d68546b0f6a72ff2da435, type: 3}
     SFXFragment2: {fileID: 3463115519308800935, guid: d8acbd76984c98742923c5893b561415, type: 3}
+    SFXSplash: {fileID: 177332, guid: c107d245af1294bba9cfc31ada72f0c0, type: 3}
 --- !u!1001 &584695745
 PrefabInstance:
   m_ObjectHideFlags: 0

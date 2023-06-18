@@ -143,6 +143,11 @@ public class PlayerController : MonoBehaviour
                 if (SFXOn)
                     SFXController.Instance.ShowBulletSparkle(position);
                 break;
+
+            case "Water":
+                SFXController.Instance.ShowSplash(transform.position);
+                GameController.Instance.PlayerDrowned();
+                break;
         }
     }
 

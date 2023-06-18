@@ -24,6 +24,12 @@ public class GameController : MonoBehaviour
     }
 
 
+    public void PlayerDrowned()
+    {
+        Invoke("RestartLevel", RestartDelay);
+    }
+
+
     private void RestartLevel()
     {
         SceneManager.LoadScene("Gameplay");

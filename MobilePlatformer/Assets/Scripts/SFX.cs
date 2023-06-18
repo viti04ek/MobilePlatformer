@@ -15,4 +15,6 @@ public class SFX
 
     public GameObject SFXFragment1;
     public GameObject SFXFragment2;
+
+    public GameObject SFXSplash;
 }
