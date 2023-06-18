@@ -143,10 +143,6 @@ public class PlayerController : MonoBehaviour
                 if (SFXOn)
                     SFXController.Instance.ShowBulletSparkle(position);
                 break;
-
-            case "Ground":
-                //SFX
-                break;
         }
     }
 

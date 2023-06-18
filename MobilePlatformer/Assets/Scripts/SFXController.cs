@@ -32,4 +32,27 @@ public class SFXController : MonoBehaviour
     {
         Instantiate(SFX.SFXPlayerLands, position, Quaternion.identity);
     }
+
+
+    public void HandleBoxBreaking(Vector3 position)
+    {
+        Vector3 pos1 = position;
+        pos1.x -= 0.3f;
+
+        Vector3 pos2 = position;
+        pos2.x += 0.3f;
+
+        Vector3 pos3 = position;
+        pos3.x -= 0.3f;
+        pos3.y -= 0.3f;
+
+        Vector3 pos4 = position;
+        pos4.x += 0.3f;
+        pos4.y += 0.3f;
+
+        Instantiate(SFX.SFXFragment1, pos1, Quaternion.identity);
+        Instantiate(SFX.SFXFragment2, pos2, Quaternion.identity);
+        Instantiate(SFX.SFXFragment2, pos3, Quaternion.identity);
+        Instantiate(SFX.SFXFragment1, pos4, Quaternion.identity);
+    }
 }
