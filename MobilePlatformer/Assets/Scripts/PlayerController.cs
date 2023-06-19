@@ -27,12 +27,14 @@ public class PlayerController : MonoBehaviour
     public GameObject LeftBullet;
     public GameObject RightBullet;
 
-    private bool _leftPressed;
-    private bool _rightPressed;
+    public bool _leftPressed;
+    public bool _rightPressed;
 
     public bool SFXOn;
 
     public bool CanFire;
+
+    public bool isStuck;
 
     
     private void Update()

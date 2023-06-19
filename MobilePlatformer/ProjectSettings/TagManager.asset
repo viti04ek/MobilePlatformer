@@ -13,6 +13,7 @@ TagManager:
   - PlayerHead
   - Water
   - Platform
+  - PlayerStuck
   layers:
   - Default
   - TransparentFX
