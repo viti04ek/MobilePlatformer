@@ -12,6 +12,7 @@ TagManager:
   - Breakable
   - PlayerHead
   - Water
+  - Platform
   layers:
   - Default
   - TransparentFX

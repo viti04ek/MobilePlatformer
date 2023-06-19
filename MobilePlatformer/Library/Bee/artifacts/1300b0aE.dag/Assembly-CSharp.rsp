@@ -377,6 +377,7 @@
 "Assets/Scripts/GarbageController.cs"
 "Assets/Scripts/HeadController.cs"
 "Assets/Scripts/MenuController.cs"
+"Assets/Scripts/MovingPlatform.cs"
 "Assets/Scripts/PlayerBulletController.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/Samples/SamplePlatform.cs"

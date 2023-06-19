@@ -70,6 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DustParticleTransform: {fileID: 119191563619900608}
   DustParticleOn: 1
+  Player: {fileID: 9091869369997400404}
 --- !u!1 &906315504452505898
 GameObject:
   m_ObjectHideFlags: 0
