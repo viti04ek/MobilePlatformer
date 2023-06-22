@@ -135,7 +135,10 @@ public class PlayerController : MonoBehaviour
         {
             case "Coin":
                 if (SFXOn)
+                {
                     SFXController.Instance.ShowCoinSparkle(collision.gameObject.transform.position);
+                    GameController.Instance.UpdateCointCount();
+                }
                 break;
 
             case "PowerupBullet":

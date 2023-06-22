@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 1106792644}
   - component: {fileID: 8995569467485109021}
   - component: {fileID: 3391907691620474785}
+  - component: {fileID: 4873300160181392166}
   m_Layer: 7
   m_Name: Feet
   m_TagString: PlayerFeet
@@ -253,6 +254,27 @@ MonoBehaviour:
   DustParticleTransform: {fileID: 119191563619900608}
   DustParticleOn: 1
   Player: {fileID: 9091869369997400404}
+--- !u!50 &4873300160181392166
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106792643}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &906315504452505898
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +317,7 @@ GameObject:
   - component: {fileID: 5001765866179376139}
   - component: {fileID: 7984349350865537542}
   - component: {fileID: 5133591774330720199}
+  - component: {fileID: 8132540017670951423}
   m_Layer: 7
   m_Name: Head
   m_TagString: PlayerHead
@@ -355,6 +378,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &8132540017670951423
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769873374188411836}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6302609035891690755
 GameObject:
   m_ObjectHideFlags: 0

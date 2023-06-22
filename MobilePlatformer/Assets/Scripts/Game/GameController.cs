@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class GameController : MonoBehaviour
     private string _dataFilePath;
     private BinaryFormatter BinaryFormatter;
 
+    public Text CoinCount;
+
 
     private void Awake()
     {
@@ -23,12 +26,6 @@ public class GameController : MonoBehaviour
 
         BinaryFormatter = new BinaryFormatter();
         _dataFilePath = Application.persistentDataPath + "/game.dat";
-    }
-
-
-    private void Update()
-    {
-        
     }
 
 
@@ -46,7 +43,8 @@ public class GameController : MonoBehaviour
         {
             FileStream fs = new FileStream(_dataFilePath, FileMode.Open);
             GameData = (GameData)BinaryFormatter.Deserialize(fs);
-            Debug.Log($"Coins: {GameData.CoinCount}");
+            CoinCount.text = $"x {GameData.CoinCount}";
+            Debug.Log("Data saved");
             fs.Close();
         }
     }
@@ -56,6 +54,7 @@ public class GameController : MonoBehaviour
     {
         FileStream fs = new FileStream(_dataFilePath, FileMode.Create);
         GameData.CoinCount = 0;
+        CoinCount.text = $"x {GameData.CoinCount}";
         BinaryFormatter.Serialize(fs, GameData);
         fs.Close();
         Debug.Log("Data reset");
@@ -93,4 +92,12 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene("Gameplay");
     }
+
+
+    public void UpdateCointCount()
+    {
+        GameData.CoinCount++;
+        CoinCount.text = $"x {GameData.CoinCount}";
+    }
+
 }
