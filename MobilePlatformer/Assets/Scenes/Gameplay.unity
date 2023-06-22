@@ -13246,7 +13246,10 @@ MonoBehaviour:
   RestartDelay: 1
   GameData:
     CoinCount: 0
+    Score: 0
   CoinCount: {fileID: 1322384449}
+  Score: {fileID: 1402402838}
+  CoinValue: 10
 --- !u!1001 &1976908731
 PrefabInstance:
   m_ObjectHideFlags: 0

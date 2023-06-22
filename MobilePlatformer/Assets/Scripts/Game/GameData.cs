@@ -7,4 +7,5 @@ using System;
 public class GameData
 {
     public int CoinCount;
+    public int Score;
 }
