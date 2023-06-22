@@ -4561,7 +4561,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!1001 &365398153
 PrefabInstance:
@@ -13244,6 +13244,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartDelay: 1
+  GameData:
+    CoinCount: 10
 --- !u!1001 &1976908731
 PrefabInstance:
   m_ObjectHideFlags: 0
