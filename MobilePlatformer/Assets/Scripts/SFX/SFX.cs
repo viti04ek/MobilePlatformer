@@ -17,4 +17,6 @@ public class SFX
     public GameObject SFXFragment2;
 
     public GameObject SFXSplash;
+
+    public GameObject SFXEnemyExplosion;
 }

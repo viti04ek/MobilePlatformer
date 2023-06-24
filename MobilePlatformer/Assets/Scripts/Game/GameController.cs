@@ -6,6 +6,15 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.UI;
 
+
+public enum Item
+{
+    Coin,
+    BigCoin,
+    Enemy
+}
+
+
 public class GameController : MonoBehaviour
 {
     public static GameController Instance;
@@ -17,10 +26,14 @@ public class GameController : MonoBehaviour
     private BinaryFormatter BinaryFormatter;
 
     public int CoinValue;
+    public int BigCoinValue;
+    public int EnemyValue;
     public UI UI;
 
     public float MaxTime;
     private float _timeLeft;
+
+    public GameObject BigCoin;
 
 
     private void Awake()
@@ -168,13 +181,28 @@ public class GameController : MonoBehaviour
     {
         GameData.CoinCount++;
         UI.CoinCount.text = $"x {GameData.CoinCount}";
-        UpdateScore(CoinValue);
     }
 
 
-    public void UpdateScore(int value)
+    public void UpdateScore(Item item)
     {
-        GameData.Score += value;
+        int itemValue = 0;
+        switch (item)
+        {
+            case Item.BigCoin:
+                itemValue = BigCoinValue;
+                break;
+
+            case Item.Coin:
+                itemValue = CoinValue;
+                break;
+
+            case Item.Enemy:
+                itemValue = EnemyValue;
+                break;
+        }
+
+        GameData.Score += itemValue;
         UI.Score.text = $"Score: {GameData.Score}";
     }
 
@@ -267,5 +295,17 @@ public class GameController : MonoBehaviour
     private void GameOver()
     {
         UI.GameOver.SetActive(true);
+    }
+
+
+    public void BulletHitEnemy(Transform enemy)
+    {
+        Vector3 position = enemy.position;
+        position.z = 20f;
+        SFXController.Instance.EnemyExplosion(position);
+
+        Destroy(enemy.gameObject);
+        Instantiate(BigCoin, position, Quaternion.identity);
+
     }
 }

@@ -5103,6 +5103,7 @@ MonoBehaviour:
     SFXFragment1: {fileID: 3463115519308800935, guid: 8c89e8a6181d68546b0f6a72ff2da435, type: 3}
     SFXFragment2: {fileID: 3463115519308800935, guid: d8acbd76984c98742923c5893b561415, type: 3}
     SFXSplash: {fileID: 177332, guid: c107d245af1294bba9cfc31ada72f0c0, type: 3}
+    SFXEnemyExplosion: {fileID: 181022, guid: 6cc865aeea61d4faf894fac185254654, type: 3}
   Key0: {fileID: 875055619}
   Key1: {fileID: 1596506650}
   Key2: {fileID: 1680449420}
@@ -13619,7 +13620,9 @@ MonoBehaviour:
     KeyFound: 000000
     Lives: 0
     IsFirstBoot: 0
-  CoinValue: 10
+  CoinValue: 1
+  BigCoinValue: 10
+  EnemyValue: 50
   UI:
     CoinCount: {fileID: 1322384449}
     Score: {fileID: 1402402838}
@@ -13637,6 +13640,7 @@ MonoBehaviour:
     FullHeart: {fileID: 21300000, guid: 41bb06b56d48d4c04ad6f95c8d753835, type: 3}
     GameOver: {fileID: 1367060632}
   MaxTime: 120
+  BigCoin: {fileID: 4902406383016613973, guid: 7445464ea232d3f40b5799aa7ac30988, type: 3}
 --- !u!1001 &1976908731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14516,7 +14520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2200930927077763396, guid: d90dc3a2342d50748a8310d878fa2f90, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.26
+      value: 2.31
       objectReference: {fileID: 0}
     - target: {fileID: 2200930927077763396, guid: d90dc3a2342d50748a8310d878fa2f90, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14624,6 +14628,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6035955360751814292, guid: fcb0fab6a04b3ee4aa153380a5d117b2, type: 3}
+      propertyPath: CanFire
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6035955360751814292, guid: fcb0fab6a04b3ee4aa153380a5d117b2, type: 3}
       propertyPath: Garbage
       value: 

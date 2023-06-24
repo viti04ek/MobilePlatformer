@@ -79,4 +79,10 @@ public class SFXController : MonoBehaviour
     {
         Instantiate(SFX.SFXSplash, position, Quaternion.identity);
     }
+
+
+    public void EnemyExplosion(Vector3 position)
+    {
+        Instantiate(SFX.SFXEnemyExplosion, position, Quaternion.identity);
+    }
 }

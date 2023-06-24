@@ -131,6 +131,15 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemy"))
             GameController.Instance.PlayerDiedAnimation(gameObject);
+
+        if (collision.gameObject.CompareTag("BigCoin"))
+        {
+            GameController.Instance.UpdateCointCount();
+            SFXController.Instance.ShowBulletSparkle(collision.gameObject.transform.position);
+            Destroy(collision.gameObject);
+
+            GameController.Instance.UpdateScore(Item.BigCoin);
+        }
     }
 
 
@@ -143,6 +152,7 @@ public class PlayerController : MonoBehaviour
                 {
                     SFXController.Instance.ShowCoinSparkle(collision.gameObject.transform.position);
                     GameController.Instance.UpdateCointCount();
+                    GameController.Instance.UpdateScore(Item.Coin);
                 }
                 break;
 
