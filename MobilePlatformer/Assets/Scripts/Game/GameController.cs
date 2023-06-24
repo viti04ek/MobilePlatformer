@@ -16,9 +16,8 @@ public class GameController : MonoBehaviour
     private string _dataFilePath;
     private BinaryFormatter BinaryFormatter;
 
-    public Text CoinCount;
-    public Text Score;
     public int CoinValue;
+    public UI UI;
 
 
     private void Awake()
@@ -46,8 +45,8 @@ public class GameController : MonoBehaviour
             FileStream fs = new FileStream(_dataFilePath, FileMode.Open);
             GameData = (GameData)BinaryFormatter.Deserialize(fs);
 
-            CoinCount.text = $"x {GameData.CoinCount}";
-            Score.text = $"Score: {GameData.Score}";
+            UI.CoinCount.text = $"x {GameData.CoinCount}";
+            UI.Score.text = $"Score: {GameData.Score}";
 
             Debug.Log("Data saved");
             fs.Close();
@@ -61,11 +60,15 @@ public class GameController : MonoBehaviour
 
         GameData.CoinCount = 0;
         GameData.Score = 0;
+        for (int keyNumber = 0; keyNumber < 3; keyNumber++)
+        {
+            GameData.KeyFound[keyNumber] = false;
+        }
 
-        CoinCount.text = $"x {GameData.CoinCount}";
-        Score.text = $"Score: {GameData.Score}";
+        UI.CoinCount.text = $"x {GameData.CoinCount}";
+        UI.Score.text = $"Score: {GameData.Score}";
+
         BinaryFormatter.Serialize(fs, GameData);
-
         fs.Close();
         Debug.Log("Data reset");
     }
@@ -107,7 +110,7 @@ public class GameController : MonoBehaviour
     public void UpdateCointCount()
     {
         GameData.CoinCount++;
-        CoinCount.text = $"x {GameData.CoinCount}";
+        UI.CoinCount.text = $"x {GameData.CoinCount}";
         UpdateScore(CoinValue);
     }
 
@@ -115,6 +118,19 @@ public class GameController : MonoBehaviour
     public void UpdateScore(int value)
     {
         GameData.Score += value;
-        Score.text = $"Score: {GameData.Score}";
+        UI.Score.text = $"Score: {GameData.Score}";
+    }
+
+
+    public void UpdateKeyCount(int keyNumber)
+    {
+        GameData.KeyFound[keyNumber] = true;
+
+        if (keyNumber == 0)
+            UI.Key0.sprite = UI.Key0Full;
+        else if (keyNumber == 1)
+            UI.Key1.sprite = UI.Key1Full;
+        else if (keyNumber == 2)
+            UI.Key2.sprite = UI.Key2Full;
     }
 }

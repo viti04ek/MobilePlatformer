@@ -8,6 +8,10 @@ public class SFXController : MonoBehaviour
 
     public SFX SFX;
 
+    public Transform Key0;
+    public Transform Key1;
+    public Transform Key2;
+
 
     private void Awake()
     {
@@ -19,6 +23,20 @@ public class SFXController : MonoBehaviour
     public void ShowCoinSparkle(Vector3 position)
     {
         Instantiate(SFX.SFXCoinPickup, position, Quaternion.identity);
+    }
+
+
+    public void ShowKeySparkle(int keyNumber)
+    {
+        Vector3 position = Vector3.zero;
+        if (keyNumber == 0)
+            position = Key0.position;
+        else if (keyNumber == 1)
+            position = Key1.position;
+        else if (keyNumber == 2)
+            position = Key2.position;
+
+        Instantiate(SFX.SFXBulletPickup, position, Quaternion.identity);
     }
 
 

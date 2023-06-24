@@ -376,6 +376,7 @@
 "Assets/Scripts/Game/GameData.cs"
 "Assets/Scripts/Items/CoinController.cs"
 "Assets/Scripts/Items/CoinsCollector.cs"
+"Assets/Scripts/Items/KeyController.cs"
 "Assets/Scripts/Platfroms/MovingPlatform.cs"
 "Assets/Scripts/Platfroms/SamplePlatform.cs"
 "Assets/Scripts/Player/FeetController.cs"
@@ -387,6 +388,7 @@
 "Assets/Scripts/SFX/SFX.cs"
 "Assets/Scripts/SFX/SFXController.cs"
 "Assets/Scripts/UI/MenuController.cs"
+"Assets/Scripts/UI/UI.cs"
 "Assets/Scripts/UI/UIController.cs"
 -langversion:9.0
 

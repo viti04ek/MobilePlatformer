@@ -8,4 +8,6 @@ public class GameData
 {
     public int CoinCount;
     public int Score;
+
+    public bool[] KeyFound;
 }
