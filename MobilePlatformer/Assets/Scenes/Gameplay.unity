@@ -5872,10 +5872,10 @@ Transform:
   - {fileID: 520235127}
   - {fileID: 1368207436}
   - {fileID: 1085520450}
-  - {fileID: 875055619}
+  - {fileID: 1596506650}
   - {fileID: 1680449420}
   - {fileID: 515699300}
-  - {fileID: 1596506650}
+  - {fileID: 875055619}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13250,12 +13250,14 @@ MonoBehaviour:
   UI:
     CoinCount: {fileID: 1322384449}
     Score: {fileID: 1402402838}
+    Timer: {fileID: 161830042}
     Key0: {fileID: 1818012790}
     Key1: {fileID: 303816657}
     Key2: {fileID: 1942396472}
     Key0Full: {fileID: 21300000, guid: 3e08735513a654b1abba299fcd4b6ada, type: 3}
     Key1Full: {fileID: 21300000, guid: 47cf76cfeb78a4ea383c4904c0260cca, type: 3}
     Key2Full: {fileID: 21300000, guid: cd2df7022edc44cea9d4ddbe9064a7d2, type: 3}
+  MaxTime: 120
 --- !u!1001 &1976908731
 PrefabInstance:
   m_ObjectHideFlags: 0

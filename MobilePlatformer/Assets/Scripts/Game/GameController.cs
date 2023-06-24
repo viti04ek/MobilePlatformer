@@ -19,6 +19,9 @@ public class GameController : MonoBehaviour
     public int CoinValue;
     public UI UI;
 
+    public float MaxTime;
+    private float _timeLeft;
+
 
     private void Awake()
     {
@@ -27,6 +30,19 @@ public class GameController : MonoBehaviour
 
         BinaryFormatter = new BinaryFormatter();
         _dataFilePath = Application.persistentDataPath + "/game.dat";
+    }
+
+
+    private void Start()
+    {
+        _timeLeft = MaxTime;
+    }
+
+
+    private void Update()
+    {
+        if (_timeLeft > 0)
+            UpdateTimer();
     }
 
 
@@ -132,5 +148,20 @@ public class GameController : MonoBehaviour
             UI.Key1.sprite = UI.Key1Full;
         else if (keyNumber == 2)
             UI.Key2.sprite = UI.Key2Full;
+    }
+
+
+    private void UpdateTimer()
+    {
+        _timeLeft -= Time.deltaTime;
+        UI.Timer.text = $"Timer: {(int)_timeLeft}";
+
+        if (_timeLeft <= 0)
+        {
+            UI.Timer.text = "Timer: 0";
+
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            PlayerDied(player);
+        }
     }
 }

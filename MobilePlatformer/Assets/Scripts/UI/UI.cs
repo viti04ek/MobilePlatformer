@@ -11,6 +11,7 @@ public class UI
     [Header("Text")]
     public Text CoinCount;
     public Text Score;
+    public Text Timer;
 
     [Header("Images/Sprites")]
     public Image Key0;
@@ -19,5 +20,4 @@ public class UI
     public Sprite Key0Full;
     public Sprite Key1Full;
     public Sprite Key2Full;
-
 }
