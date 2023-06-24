@@ -10,4 +10,7 @@ public class GameData
     public int Score;
 
     public bool[] KeyFound;
+
+    public int Lives;
+    public bool IsFirstBoot;
 }

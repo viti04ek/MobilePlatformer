@@ -655,3 +655,4 @@ MonoBehaviour:
   SFXOn: 1
   CanFire: 0
   isStuck: 0
+  Garbage: {fileID: 0}

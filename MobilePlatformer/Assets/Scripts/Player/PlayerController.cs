@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
 
     public bool isStuck;
 
+    public GameObject Garbage;
+
     
     private void Update()
     {
@@ -150,6 +152,7 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case "Water":
+                Garbage.SetActive(false);
                 SFXController.Instance.ShowSplash(transform.position);
                 GameController.Instance.PlayerDrowned();
                 break;

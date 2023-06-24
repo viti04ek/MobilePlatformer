@@ -20,4 +20,11 @@ public class UI
     public Sprite Key0Full;
     public Sprite Key1Full;
     public Sprite Key2Full;
+    public Image Heart1;
+    public Image Heart2;
+    public Image Heart3;
+    public Sprite EmptyHeart;
+    public Sprite FullHeart;
+
+    public GameObject GameOver;
 }

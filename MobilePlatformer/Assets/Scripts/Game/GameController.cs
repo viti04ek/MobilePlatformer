@@ -36,11 +36,17 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         _timeLeft = MaxTime;
+
+        HandleFirstBoot();
+        UpdateHearts();
     }
 
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            ResetData();
+
         if (_timeLeft > 0)
             UpdateTimer();
     }
@@ -80,6 +86,8 @@ public class GameController : MonoBehaviour
         {
             GameData.KeyFound[keyNumber] = false;
         }
+        GameData.Lives = 3;
+        UpdateHearts();
 
         UI.CoinCount.text = $"x {GameData.CoinCount}";
         UI.Score.text = $"Score: {GameData.Score}";
@@ -107,13 +115,13 @@ public class GameController : MonoBehaviour
     public void PlayerDied(GameObject player)
     {
         player.SetActive(false);
-        Invoke("RestartLevel", RestartDelay);
+        CheckLives();
     }
 
 
     public void PlayerDrowned()
     {
-        Invoke("RestartLevel", RestartDelay);
+        CheckLives();
     }
 
 
@@ -163,5 +171,68 @@ public class GameController : MonoBehaviour
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             PlayerDied(player);
         }
+    }
+
+
+    private void HandleFirstBoot()
+    {
+        if (GameData.IsFirstBoot)
+        {
+            GameData.Lives = 3;
+            GameData.CoinCount = 0;
+            GameData.Score = 0;
+            GameData.KeyFound[0] = false;
+            GameData.KeyFound[1] = false;
+            GameData.KeyFound[2] = false;
+            GameData.IsFirstBoot = false;
+        }
+    }
+
+
+    private void UpdateHearts()
+    {
+        if (GameData.Lives == 3)
+        {
+            UI.Heart1.sprite = UI.FullHeart;
+            UI.Heart2.sprite = UI.FullHeart;
+            UI.Heart3.sprite = UI.FullHeart;
+        }
+
+        if (GameData.Lives == 2)
+        {
+            UI.Heart1.sprite = UI.EmptyHeart;
+        }
+
+        if (GameData.Lives == 1)
+        {
+            UI.Heart1.sprite = UI.EmptyHeart;
+            UI.Heart2.sprite = UI.EmptyHeart;
+        }
+    }
+
+
+    private void CheckLives()
+    {
+        int updatedLives = GameData.Lives;
+        updatedLives--;
+        GameData.Lives = updatedLives;
+
+        if (GameData.Lives == 0)
+        {
+            GameData.Lives = 3;
+            SaveData();
+            Invoke("GameOver", RestartDelay);
+        }
+        else
+        {
+            SaveData();
+            Invoke("RestartLevel", RestartDelay);
+        }
+    }
+
+
+    private void GameOver()
+    {
+        UI.GameOver.SetActive(true);
     }
 }
