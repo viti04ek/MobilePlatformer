@@ -308,4 +308,12 @@ public class GameController : MonoBehaviour
         Instantiate(BigCoin, position, Quaternion.identity);
 
     }
+
+
+    public void PlayerStompsEnemy(GameObject enemy)
+    {
+        enemy.tag = "Untagged";
+        Destroy(enemy);
+        UpdateScore(Item.Enemy);
+    }
 }

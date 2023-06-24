@@ -15,6 +15,7 @@ TagManager:
   - Platform
   - PlayerStuck
   - BigCoin
+  - EnemyHead
   layers:
   - Default
   - TransparentFX
