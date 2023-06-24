@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 9660403}
   - component: {fileID: 9660405}
   - component: {fileID: 9660404}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Heart1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3889,7 +3889,7 @@ GameObject:
   - component: {fileID: 161830041}
   - component: {fileID: 161830043}
   - component: {fileID: 161830042}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TextTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4031,7 +4031,7 @@ GameObject:
   - component: {fileID: 189408381}
   - component: {fileID: 189408383}
   - component: {fileID: 189408382}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Heart3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4397,7 +4397,7 @@ GameObject:
   - component: {fileID: 303816656}
   - component: {fileID: 303816658}
   - component: {fileID: 303816657}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Key2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6503,7 +6503,7 @@ GameObject:
   - component: {fileID: 1287273486}
   - component: {fileID: 1287273488}
   - component: {fileID: 1287273487}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Heart2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6579,7 +6579,7 @@ GameObject:
   - component: {fileID: 1322384448}
   - component: {fileID: 1322384450}
   - component: {fileID: 1322384449}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TextCoinCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6836,7 +6836,7 @@ GameObject:
   - component: {fileID: 1402402837}
   - component: {fileID: 1402402839}
   - component: {fileID: 1402402838}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TextScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6989,7 +6989,7 @@ GameObject:
   - component: {fileID: 1427528939}
   - component: {fileID: 1427528938}
   - component: {fileID: 1427528937}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7109,7 +7109,10 @@ GameObject:
   - component: {fileID: 1441181409}
   - component: {fileID: 1441181411}
   - component: {fileID: 1441181410}
-  m_Layer: 0
+  - component: {fileID: 1441181413}
+  - component: {fileID: 1441181412}
+  - component: {fileID: 1441181414}
+  m_Layer: 5
   m_Name: CoinCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7174,6 +7177,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441181408}
   m_CullTransparentMesh: 1
+--- !u!50 &1441181412
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441181408}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &1441181413
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441181408}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &1441181414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441181408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034fd7b1273110045b03514a692c54cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1486439158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8102,7 +8154,7 @@ GameObject:
   - component: {fileID: 1818012789}
   - component: {fileID: 1818012791}
   - component: {fileID: 1818012790}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Key1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13077,7 +13129,7 @@ GameObject:
   - component: {fileID: 1942396471}
   - component: {fileID: 1942396473}
   - component: {fileID: 1942396472}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Key3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13318,7 +13370,7 @@ GameObject:
   - component: {fileID: 1992565073}
   - component: {fileID: 1992565075}
   - component: {fileID: 1992565074}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -375,6 +375,7 @@
 "Assets/Scripts/Game/GameController.cs"
 "Assets/Scripts/Game/GameData.cs"
 "Assets/Scripts/Items/CoinController.cs"
+"Assets/Scripts/Items/CoinsCollector.cs"
 "Assets/Scripts/Platfroms/MovingPlatform.cs"
 "Assets/Scripts/Platfroms/SamplePlatform.cs"
 "Assets/Scripts/Player/FeetController.cs"
