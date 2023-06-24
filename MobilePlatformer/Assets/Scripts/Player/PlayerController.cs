@@ -128,6 +128,9 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
             _isJumping = false;
+
+        if (collision.gameObject.CompareTag("Enemy"))
+            GameController.Instance.PlayerDiedAnimation(gameObject);
     }
 
 

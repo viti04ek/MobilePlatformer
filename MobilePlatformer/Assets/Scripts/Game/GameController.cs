@@ -119,6 +119,39 @@ public class GameController : MonoBehaviour
     }
 
 
+    public void PlayerDiedAnimation(GameObject player)
+    {
+        Rigidbody2D rigidbody2D = player.GetComponent<Rigidbody2D>();
+        rigidbody2D.AddForce(new Vector2(-150f, 400f));
+
+        player.transform.Rotate(new Vector3(0, 0, 45));
+
+        player.GetComponent<PlayerController>().enabled = false;
+
+        foreach (var c2d in player.transform.GetComponents<Collider2D>())
+        {
+            c2d.enabled = false;
+        }
+
+        foreach (Transform child in player.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+
+        Camera.main.GetComponent<CameraController>().enabled = false;
+        rigidbody2D.velocity = Vector2.zero;
+
+        StartCoroutine("PauseBeforeReload", player);
+    }
+
+
+    IEnumerator PauseBeforeReload(GameObject player)
+    {
+        yield return new WaitForSeconds(1.5f);
+        PlayerDied(player);
+    }
+
+
     public void PlayerDrowned()
     {
         CheckLives();
