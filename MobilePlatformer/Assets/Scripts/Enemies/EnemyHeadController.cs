@@ -13,6 +13,7 @@ public class EnemyHeadController : MonoBehaviour
         {
             GameController.Instance.PlayerStompsEnemy(Enemy);
             SFXController.Instance.ShowEnemyPoof(Enemy.transform.position);
+            AudioController.Instance.EnemyHit(Enemy.transform.position);
         }
     }
 }

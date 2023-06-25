@@ -132,7 +132,10 @@ public class PlayerController : MonoBehaviour
             _isJumping = false;
 
         if (collision.gameObject.CompareTag("Enemy"))
+        {
             GameController.Instance.PlayerDiedAnimation(gameObject);
+            AudioController.Instance.PlayerDied(gameObject.transform.position);
+        }
 
         if (collision.gameObject.CompareTag("BigCoin"))
         {
@@ -166,16 +169,19 @@ public class PlayerController : MonoBehaviour
                 Destroy(collision.gameObject);
                 if (SFXOn)
                     SFXController.Instance.ShowBulletSparkle(position);
+                AudioController.Instance.PowerUp(gameObject.transform.position);
                 break;
 
             case "Water":
                 Garbage.SetActive(false);
                 SFXController.Instance.ShowSplash(transform.position);
                 GameController.Instance.PlayerDrowned();
+                AudioController.Instance.WaterSplash(gameObject.transform.position);
                 break;
 
             case "Enemy":
                 GameController.Instance.PlayerDiedAnimation(gameObject);
+                AudioController.Instance.PlayerDied(gameObject.transform.position);
                 break;
         }
     }

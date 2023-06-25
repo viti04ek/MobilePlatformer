@@ -13,6 +13,7 @@ public class KeyController : MonoBehaviour
         {
             GameController.Instance.UpdateKeyCount(KeyNumber);
             SFXController.Instance.ShowKeySparkle(KeyNumber);
+            AudioController.Instance.KeyFound(gameObject.transform.position);
             Destroy(gameObject);
         }
     }

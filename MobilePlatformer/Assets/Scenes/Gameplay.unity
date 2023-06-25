@@ -5706,7 +5706,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &797674189
 Transform:
   m_ObjectHideFlags: 0
@@ -7950,6 +7950,11 @@ MonoBehaviour:
     FireBullets: {fileID: 8300000, guid: c3e7b44ee31e64d7fa34b81ec52c4c4c, type: 3}
     EnemyExplosion: {fileID: 8300000, guid: 9e5669deb0c2f49b2adae4f686f978b5, type: 3}
     BreakCrates: {fileID: 8300000, guid: b668216871e694c2f9bb965f86b2faf9, type: 3}
+    WaterSplash: {fileID: 8300000, guid: a9201c2e5628d4cda9e92854595b2171, type: 3}
+    PowerUp: {fileID: 8300000, guid: e7350538692d24099adb730f84a86860, type: 3}
+    KeyFound: {fileID: 8300000, guid: 5363dd8d1cd3c42e3b85d6f52395a4c7, type: 3}
+    EnemyHit: {fileID: 8300000, guid: 92854dd9ae0984259a33c06bf3ea4322, type: 3}
+    PlayerDied: {fileID: 8300000, guid: 38c9d812f3d774f5699f294d0f83df1b, type: 3}
   Player: {fileID: 92711140}
   SoundOn: 1
 --- !u!1001 &1592388557
@@ -14917,11 +14922,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9091869369997400403, guid: fcb0fab6a04b3ee4aa153380a5d117b2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.4
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 9091869369997400403, guid: fcb0fab6a04b3ee4aa153380a5d117b2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1
+      value: -2.2
       objectReference: {fileID: 0}
     - target: {fileID: 9091869369997400403, guid: fcb0fab6a04b3ee4aa153380a5d117b2, type: 3}
       propertyPath: m_LocalPosition.z

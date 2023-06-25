@@ -51,4 +51,39 @@ public class AudioController : MonoBehaviour
         if (SoundOn)
             AudioSource.PlayClipAtPoint(PlayerAudio.BreakCrates, playerPos);
     }
+
+
+    public void WaterSplash(Vector3 playerPos)
+    {
+        if (SoundOn)
+            AudioSource.PlayClipAtPoint(PlayerAudio.WaterSplash, playerPos);
+    }
+
+
+    public void PowerUp(Vector3 playerPos)
+    {
+        if (SoundOn)
+            AudioSource.PlayClipAtPoint(PlayerAudio.PowerUp, playerPos);
+    }
+
+
+    public void KeyFound(Vector3 playerPos)
+    {
+        if (SoundOn)
+            AudioSource.PlayClipAtPoint(PlayerAudio.KeyFound, playerPos);
+    }
+
+
+    public void EnemyHit(Vector3 playerPos)
+    {
+        if (SoundOn)
+            AudioSource.PlayClipAtPoint(PlayerAudio.EnemyHit, playerPos);
+    }
+
+
+    public void PlayerDied(Vector3 playerPos)
+    {
+        if (SoundOn)
+            AudioSource.PlayClipAtPoint(PlayerAudio.PlayerDied, playerPos);
+    }
 }
