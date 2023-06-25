@@ -7,5 +7,9 @@ using System;
 [Serializable]
 public class PlayerAudio
 {
-    
+    public AudioClip PlayerJump;
+    public AudioClip CoinPickup;
+    public AudioClip FireBullets;
+    public AudioClip EnemyExplosion;
+    public AudioClip BreakCrates;
 }

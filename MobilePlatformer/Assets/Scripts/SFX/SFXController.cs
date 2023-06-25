@@ -72,6 +72,8 @@ public class SFXController : MonoBehaviour
         Instantiate(SFX.SFXFragment2, pos2, Quaternion.identity);
         Instantiate(SFX.SFXFragment2, pos3, Quaternion.identity);
         Instantiate(SFX.SFXFragment1, pos4, Quaternion.identity);
+
+        AudioController.Instance.BreakCrates(position);
     }
 
 

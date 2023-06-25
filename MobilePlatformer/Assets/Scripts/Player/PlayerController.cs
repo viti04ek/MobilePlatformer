@@ -95,6 +95,7 @@ public class PlayerController : MonoBehaviour
             _isJumping = true;
             Rigidbody2D.AddForce(new Vector2(0, JumpSpeed));
             Animator.SetInteger("State", 2);
+            AudioController.Instance.PlayerJump(gameObject.transform.position);
 
             Invoke("EnableDoubleJump", DelayForDoubleJump);
         }
@@ -104,6 +105,7 @@ public class PlayerController : MonoBehaviour
             Rigidbody2D.velocity = Vector2.zero;
             Rigidbody2D.AddForce(new Vector2(0, JumpSpeed));
             Animator.SetInteger("State", 2);
+            AudioController.Instance.PlayerJump(gameObject.transform.position);
             _canDoubleJump = false;
         }
     }
@@ -139,6 +141,7 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
 
             GameController.Instance.UpdateScore(Item.BigCoin);
+            AudioController.Instance.CoinPickup(gameObject.transform.position);
         }
     }
 
@@ -153,6 +156,7 @@ public class PlayerController : MonoBehaviour
                     SFXController.Instance.ShowCoinSparkle(collision.gameObject.transform.position);
                     GameController.Instance.UpdateCointCount();
                     GameController.Instance.UpdateScore(Item.Coin);
+                    AudioController.Instance.CoinPickup(gameObject.transform.position);
                 }
                 break;
 
@@ -191,6 +195,8 @@ public class PlayerController : MonoBehaviour
                 Instantiate(LeftBullet, LeftBulletSpawn.position, Quaternion.identity);
             else
                 Instantiate(RightBullet, RightBulletSpawn.position, Quaternion.identity);
+
+            AudioController.Instance.FireBullets(gameObject.transform.position);
         }
     }
 

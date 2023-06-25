@@ -307,6 +307,7 @@ public class GameController : MonoBehaviour
         Destroy(enemy.gameObject);
         Instantiate(BigCoin, position, Quaternion.identity);
 
+        AudioController.Instance.EnemyExplosion(position);
     }
 
 
