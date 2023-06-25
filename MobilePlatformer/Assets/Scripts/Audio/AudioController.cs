@@ -10,11 +10,21 @@ public class AudioController : MonoBehaviour
     public Transform Player;
     public bool SoundOn = true;
 
+    public GameObject BGMusic;
+    public bool BGMusicOn;
+
 
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
+    }
+
+
+    private void Start()
+    {
+        if (BGMusicOn)
+            BGMusic.SetActive(true);
     }
 
 
