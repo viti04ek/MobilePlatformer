@@ -377,6 +377,8 @@
 "Assets/Scripts/Enemies/BomberBeeAI.cs"
 "Assets/Scripts/Enemies/EnemyHeadController.cs"
 "Assets/Scripts/Enemies/EnemyPatrol.cs"
+"Assets/Scripts/Enemies/FishAI.cs"
+"Assets/Scripts/Enemies/FishSpawner.cs"
 "Assets/Scripts/Enemies/SimpleMovement.cs"
 "Assets/Scripts/Enviroment/GarbageController.cs"
 "Assets/Scripts/Enviroment/Parallax.cs"
