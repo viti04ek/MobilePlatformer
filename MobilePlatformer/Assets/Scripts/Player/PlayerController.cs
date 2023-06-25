@@ -169,6 +169,10 @@ public class PlayerController : MonoBehaviour
                 SFXController.Instance.ShowSplash(transform.position);
                 GameController.Instance.PlayerDrowned();
                 break;
+
+            case "Enemy":
+                GameController.Instance.PlayerDiedAnimation(gameObject);
+                break;
         }
     }
 
