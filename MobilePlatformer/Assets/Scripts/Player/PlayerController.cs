@@ -183,6 +183,10 @@ public class PlayerController : MonoBehaviour
                 GameController.Instance.PlayerDiedAnimation(gameObject);
                 AudioController.Instance.PlayerDied(gameObject.transform.position);
                 break;
+
+            case "BossKey":
+                GameController.Instance.ShowLever();
+                break;
         }
     }
 

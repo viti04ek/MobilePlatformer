@@ -35,6 +35,9 @@ public class GameController : MonoBehaviour
 
     public GameObject BigCoin;
 
+    public GameObject Player;
+    public GameObject Lever;
+
 
     private void Awake()
     {
@@ -316,5 +319,22 @@ public class GameController : MonoBehaviour
         enemy.tag = "Untagged";
         Destroy(enemy);
         UpdateScore(Item.Enemy);
+    }
+
+
+    public void StopCameraFollow()
+    {
+        Camera.main.GetComponent<CameraController>().enabled = false;
+        Player.GetComponent<PlayerController>().isStuck = true;
+        Player.transform.Find("LeftCheck").gameObject.SetActive(false);
+        Player.transform.Find("RightCheck").gameObject.SetActive(false);
+    }
+
+
+    public void ShowLever()
+    {
+        Lever.SetActive(true);
+        SFXController.Instance.ShowPlayerLanding(Lever.transform.position);
+        AudioController.Instance.EnemyExplosion(Lever.transform.position);
     }
 }
