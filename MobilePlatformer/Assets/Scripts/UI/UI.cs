@@ -27,4 +27,6 @@ public class UI
     public Sprite FullHeart;
 
     public GameObject GameOver;
+
+    public Slider BossHealth;
 }

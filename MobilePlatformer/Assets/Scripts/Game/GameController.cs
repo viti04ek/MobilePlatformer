@@ -38,6 +38,11 @@ public class GameController : MonoBehaviour
     public GameObject Player;
     public GameObject Lever;
 
+    public GameObject EnemySpawner;
+    public GameObject SignPlatform;
+
+    private bool _timerOn;
+
 
     private void Awake()
     {
@@ -52,9 +57,10 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         _timeLeft = MaxTime;
-
+        _timerOn = true;
         HandleFirstBoot();
         UpdateHearts();
+        UI.BossHealth.gameObject.SetActive(false);
     }
 
 
@@ -63,7 +69,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
             ResetData();
 
-        if (_timeLeft > 0)
+        if (_timeLeft > 0 && _timerOn)
             UpdateTimer();
     }
 
@@ -220,6 +226,9 @@ public class GameController : MonoBehaviour
             UI.Key1.sprite = UI.Key1Full;
         else if (keyNumber == 2)
             UI.Key2.sprite = UI.Key2Full;
+
+        if (GameData.KeyFound[0] && GameData.KeyFound[1])
+            ShowSignPlatform();
     }
 
 
@@ -336,5 +345,27 @@ public class GameController : MonoBehaviour
         Lever.SetActive(true);
         SFXController.Instance.ShowPlayerLanding(Lever.transform.position);
         AudioController.Instance.EnemyExplosion(Lever.transform.position);
+        DeactivateEnemySpawner();
+    }
+
+
+    public void ActivateEnemySpawner()
+    {
+        EnemySpawner.SetActive(true);
+    }
+
+
+    public void DeactivateEnemySpawner()
+    {
+        EnemySpawner.SetActive(false);
+    }
+
+
+    private void ShowSignPlatform()
+    {
+        SignPlatform.SetActive(true);
+        SFXController.Instance.ShowPlayerLanding(SignPlatform.transform.position);
+        _timerOn = false;
+        UI.BossHealth.gameObject.SetActive(true);
     }
 }

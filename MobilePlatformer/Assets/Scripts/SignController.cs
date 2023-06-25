@@ -8,7 +8,9 @@ public class SignController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
             GameController.Instance.StopCameraFollow();
+            GameController.Instance.ActivateEnemySpawner();
         }
     }
 }

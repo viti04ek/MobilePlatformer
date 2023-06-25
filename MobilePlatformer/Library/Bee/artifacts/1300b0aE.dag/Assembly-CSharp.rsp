@@ -381,6 +381,7 @@
 "Assets/Scripts/Enemies/BossOneAI.cs"
 "Assets/Scripts/Enemies/EnemyHeadController.cs"
 "Assets/Scripts/Enemies/EnemyPatrol.cs"
+"Assets/Scripts/Enemies/EnemySpawner.cs"
 "Assets/Scripts/Enemies/FishAI.cs"
 "Assets/Scripts/Enemies/FishSpawner.cs"
 "Assets/Scripts/Enemies/SimpleMovement.cs"

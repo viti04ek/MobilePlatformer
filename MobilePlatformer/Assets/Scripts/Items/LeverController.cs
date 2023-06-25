@@ -8,6 +8,9 @@ public class LeverController : MonoBehaviour
     public Vector2 JumpSpeed;
     public GameObject[] Stairs;
 
+    public SpriteRenderer SpriteRenderer;
+    public Sprite LeverPulled;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,6 +22,9 @@ public class LeverController : MonoBehaviour
             {
                 stair.GetComponent<BoxCollider2D>().enabled = false;
             }
+
+            SFXController.Instance.ShowPlayerLanding(transform.position);
+            SpriteRenderer.sprite = LeverPulled;
         }
     }
 }
