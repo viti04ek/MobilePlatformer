@@ -16,6 +16,8 @@ TagManager:
   - PlayerStuck
   - BigCoin
   - EnemyHead
+  - LevelOneBoss
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX

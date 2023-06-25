@@ -378,6 +378,7 @@
 "Assets/Scripts/DestroyWithDelay.cs"
 "Assets/Scripts/Enemies/BeeActivator.cs"
 "Assets/Scripts/Enemies/BomberBeeAI.cs"
+"Assets/Scripts/Enemies/BossOneAI.cs"
 "Assets/Scripts/Enemies/EnemyHeadController.cs"
 "Assets/Scripts/Enemies/EnemyPatrol.cs"
 "Assets/Scripts/Enemies/FishAI.cs"

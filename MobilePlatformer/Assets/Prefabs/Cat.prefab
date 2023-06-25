@@ -653,6 +653,6 @@ MonoBehaviour:
   _leftPressed: 0
   _rightPressed: 0
   SFXOn: 1
-  CanFire: 0
+  CanFire: 1
   isStuck: 0
   Garbage: {fileID: 0}
