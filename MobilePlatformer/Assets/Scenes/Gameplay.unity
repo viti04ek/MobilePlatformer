@@ -3915,6 +3915,7 @@ GameObject:
   - component: {fileID: 131406012}
   - component: {fileID: 131406014}
   - component: {fileID: 131406013}
+  - component: {fileID: 131406015}
   m_Layer: 5
   m_Name: LevelComplete
   m_TagString: Untagged
@@ -3940,8 +3941,8 @@ RectTransform:
   - {fileID: 1286028290}
   - {fileID: 1820199088}
   - {fileID: 1785184127}
-  - {fileID: 1338463196}
   - {fileID: 1455343842}
+  - {fileID: 1338463196}
   - {fileID: 892757305}
   m_Father: {fileID: 1627812428}
   m_RootOrder: 0
@@ -3989,6 +3990,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131406011}
   m_CullTransparentMesh: 1
+--- !u!114 &131406015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131406011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 103311afa56a5d742a10b748cbdb9360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NextLevel: {fileID: 1849701320}
+  GoldenStar: {fileID: 21300000, guid: b9cf1a6a89e704aa095c77fffcebe78f, type: 3}
+  Star1: {fileID: 1455343843}
+  Star2: {fileID: 1338463197}
+  Star3: {fileID: 892757306}
+  ScoreText: {fileID: 1785184128}
+  LevelNumber: 1
+  Score: 2
+  ScoreForThreeStars: 7
+  ScoreForTwoStars: 3
+  ScoreForOneStar: 1
+  ScoreForNextLevel: 7
+  AnimStartDelay: 0.5
+  AnimDelay: 0.7
 --- !u!1 &161830040
 GameObject:
   m_ObjectHideFlags: 0
@@ -8247,7 +8274,7 @@ GameObject:
   - component: {fileID: 1338463198}
   - component: {fileID: 1338463197}
   m_Layer: 5
-  m_Name: Star1
+  m_Name: Star2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8266,7 +8293,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 131406012}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9134,7 +9161,7 @@ GameObject:
   - component: {fileID: 1455343844}
   - component: {fileID: 1455343843}
   m_Layer: 5
-  m_Name: Star2
+  m_Name: Star1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9153,7 +9180,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 131406012}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9517,7 +9544,7 @@ MonoBehaviour:
     EnemyHit: {fileID: 8300000, guid: 92854dd9ae0984259a33c06bf3ea4322, type: 3}
     PlayerDied: {fileID: 8300000, guid: 38c9d812f3d774f5699f294d0f83df1b, type: 3}
   Player: {fileID: 92711140}
-  SoundOn: 0
+  SoundOn: 1
   BGMusic: {fileID: 304854246}
   BGMusicOn: 0
 --- !u!1001 &1592388557
@@ -15727,14 +15754,14 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 21300140, guid: 7f51b2aedd529424a82328b6fb31a7a5, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300142, guid: 7f51b2aedd529424a82328b6fb31a7a5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1849701321}
   m_OnClick:
     m_PersistentCalls:

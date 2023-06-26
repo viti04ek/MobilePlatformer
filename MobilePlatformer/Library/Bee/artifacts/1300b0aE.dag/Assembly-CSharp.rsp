@@ -404,6 +404,7 @@
 "Assets/Scripts/SFX/SFX.cs"
 "Assets/Scripts/SFX/SFXController.cs"
 "Assets/Scripts/UI/Menu/AppClose.cs"
+"Assets/Scripts/UI/Menu/LevelCompleteController.cs"
 "Assets/Scripts/UI/Menu/MenuController.cs"
 "Assets/Scripts/UI/Menu/SceneChanger.cs"
 "Assets/Scripts/UI/UI.cs"

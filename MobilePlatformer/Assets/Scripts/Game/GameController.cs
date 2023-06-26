@@ -368,4 +368,10 @@ public class GameController : MonoBehaviour
         _timerOn = false;
         UI.BossHealth.gameObject.SetActive(true);
     }
+
+
+    public int GetScore()
+    {
+        return GameData.Score;
+    }
 }
