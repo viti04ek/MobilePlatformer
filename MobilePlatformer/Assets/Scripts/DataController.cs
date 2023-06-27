@@ -26,6 +26,7 @@ public class DataController : MonoBehaviour
 
         BinaryFormatter = new BinaryFormatter();
         _dataFilePath = Application.persistentDataPath + "/game.dat";
+        Debug.Log(_dataFilePath);
     }
 
 
@@ -43,7 +44,29 @@ public class DataController : MonoBehaviour
 
     private void OnEnable()
     {
-        RefreshData();
+        CheckDB();
+    }
+
+
+    private void CheckDB()
+    {
+        if (!File.Exists(_dataFilePath))
+        {
+            #if UNITY_ANDROID
+            string srcFile = System.IO.Path.Combine(Application.streamingAssetsPath, "game.dat");
+            WWW downloader = new WWW(srcFile);
+            while (!downloader.isDone)
+            {
+
+            }
+            File.WriteAllBytes(_dataFilePath, downloader.bytes);
+            RefreshData();
+            #endif
+        }
+        else
+        {
+            RefreshData();
+        }
     }
 
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ButtonController : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class ButtonController : MonoBehaviour
 
     public Sprite LockedButton;
     public Sprite UnlockedButton;
+    public string SceneName;
 
 
     private void Start()
@@ -62,6 +64,8 @@ public class ButtonController : MonoBehaviour
                 _star2.gameObject.SetActive(false);
                 _star3.gameObject.SetActive(false);
             }
+
+            _button.onClick.AddListener(LoadScene);
         }
         else
         {
@@ -71,5 +75,11 @@ public class ButtonController : MonoBehaviour
             _star2.gameObject.SetActive(false);
             _star3.gameObject.SetActive(false);
         }
+    }
+
+
+    private void LoadScene()
+    {
+        SceneManager.LoadScene(SceneName);
     }
 }
