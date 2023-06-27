@@ -11,6 +11,8 @@ public class DataController : MonoBehaviour
     private string _dataFilePath;
     private BinaryFormatter BinaryFormatter;
 
+    public bool DevMode;
+
 
     private void Awake()
     {
@@ -53,20 +55,39 @@ public class DataController : MonoBehaviour
         if (!File.Exists(_dataFilePath))
         {
             #if UNITY_ANDROID
-            string srcFile = System.IO.Path.Combine(Application.streamingAssetsPath, "game.dat");
-            WWW downloader = new WWW(srcFile);
-            while (!downloader.isDone)
-            {
-
-            }
-            File.WriteAllBytes(_dataFilePath, downloader.bytes);
-            RefreshData();
+            CopyDB();
             #endif
         }
         else
         {
+            if (SystemInfo.deviceType == DeviceType.Handheld && DevMode)
+            {
+                File.Delete(_dataFilePath);
+                CopyDB();
+            }
+
+            if (SystemInfo.deviceType == DeviceType.Desktop)
+            {
+                string destFile = System.IO.Path.Combine(Application.streamingAssetsPath, "game.dat");
+                File.Delete(destFile);
+                File.Copy(_dataFilePath, destFile);
+            }
+
             RefreshData();
         }
+    }
+
+
+    private void CopyDB()
+    {
+        string srcFile = System.IO.Path.Combine(Application.streamingAssetsPath, "game.dat");
+        WWW downloader = new WWW(srcFile);
+        while (!downloader.isDone)
+        {
+
+        }
+        File.WriteAllBytes(_dataFilePath, downloader.bytes);
+        RefreshData();
     }
 
 

@@ -5647,6 +5647,7 @@ MonoBehaviour:
     Lives: 0
     IsFirstBoot: 0
     LevelData: []
+  DevMode: 1
 --- !u!4 &1533940230
 Transform:
   m_ObjectHideFlags: 0
