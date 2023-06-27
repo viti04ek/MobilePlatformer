@@ -346,12 +346,15 @@ public class GameController : MonoBehaviour
 
     public void UnlockLevel(int levelNumber)
     {
-        GameData.LevelData[levelNumber].IsUnlocked = true;
+        GameData.LevelData[levelNumber + 1].IsUnlocked = true;
     }
 
 
     public void LevelComplete()
     {
+        if (_timerOn)
+            _timerOn = false;
+
         UI.MobileUI.SetActive(false);
         UI.LevelCompleteMenu.SetActive(true);
     }
