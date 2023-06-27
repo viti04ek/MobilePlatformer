@@ -13,4 +13,6 @@ public class GameData
 
     public int Lives;
     public bool IsFirstBoot;
+
+    public LevelData[] LevelData;
 }

@@ -13,7 +13,7 @@ public class LevelCompleteController : MonoBehaviour
     public Image Star3;
     public Text ScoreText;
     public int LevelNumber;
-    public int Score;
+    [HideInInspector] public int Score;
     public int ScoreForThreeStars;
     public int ScoreForTwoStars;
     public int ScoreForOneStar;
@@ -27,23 +27,26 @@ public class LevelCompleteController : MonoBehaviour
 
     private void Start()
     {
-        //Score = GameController.Instance.GetScore();
+        Score = GameController.Instance.GetScore();
         ScoreText.text = Score.ToString();
 
         if (Score >= ScoreForThreeStars)
         {
             _showThreeStars = true;
+            GameController.Instance.SetStarsAwarded(LevelNumber, 3);
             Invoke("ShowGoldenStars", AnimStartDelay);
         }
 
         if (Score >= ScoreForTwoStars && Score < ScoreForThreeStars)
         {
             _showTwoStars = true;
+            GameController.Instance.SetStarsAwarded(LevelNumber, 2);
             Invoke("ShowGoldenStars", AnimStartDelay);
         }
 
-        if (Score >= ScoreForOneStar && Score != 0)
+        if (Score >= ScoreForOneStar && Score < ScoreForTwoStars && Score != 0)
         {
+            GameController.Instance.SetStarsAwarded(LevelNumber, 1);
             Invoke("ShowGoldenStars", AnimStartDelay);
         }
 
@@ -74,6 +77,8 @@ public class LevelCompleteController : MonoBehaviour
 
         if (_showTwoStars || _showThreeStars)
             StartCoroutine("HandleSecondStarAnim", Star2);
+        else
+            Invoke("CheckLevelStatus", 1.2f);
     }
 
 
@@ -85,6 +90,8 @@ public class LevelCompleteController : MonoBehaviour
         _showTwoStars = false;
         if (_showThreeStars)
             StartCoroutine("HandleThirdStarAnim", Star3);
+        else
+            Invoke("CheckLevelStatus", 1.2f);
     }
 
 
@@ -94,5 +101,22 @@ public class LevelCompleteController : MonoBehaviour
         yield return new WaitForSeconds(AnimDelay);
 
         _showThreeStars = false;
+        Invoke("CheckLevelStatus", 1.2f);
+    }
+
+
+    private void CheckLevelStatus()
+    {
+        if (Score >= ScoreForNextLevel)
+        {
+            NextLevel.interactable = true;
+            SFXController.Instance.ShowBulletSparkle(Camera.main.ScreenToWorldPoint(NextLevel.gameObject.transform.position));
+            AudioController.Instance.KeyFound(Camera.main.ScreenToWorldPoint(NextLevel.gameObject.transform.position));
+            GameController.Instance.UnlockLevel(LevelNumber);
+        }
+        else
+        {
+            NextLevel.interactable = false;
+        }
     }
 }

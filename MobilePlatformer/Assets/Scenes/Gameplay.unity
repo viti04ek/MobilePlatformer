@@ -3922,7 +3922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &131406012
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4009,7 +4009,7 @@ MonoBehaviour:
   Star3: {fileID: 892757306}
   ScoreText: {fileID: 1785184128}
   LevelNumber: 1
-  Score: 2
+  Score: 10
   ScoreForThreeStars: 7
   ScoreForTwoStars: 3
   ScoreForOneStar: 1
@@ -6172,7 +6172,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &797674189
 Transform:
   m_ObjectHideFlags: 0
@@ -6645,7 +6645,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Gameplay
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &965470153
@@ -7892,7 +7892,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Gameplay
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1286028293
@@ -9935,7 +9935,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!4 &1664967171 stripped
 Transform:
@@ -15775,7 +15775,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Gameplay
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1849701321
@@ -16333,6 +16333,13 @@ MonoBehaviour:
     KeyFound: 000000
     Lives: 0
     IsFirstBoot: 0
+    LevelData:
+    - LevelNumber: 0
+      IsUnlocked: 0
+      StarsAwarded: 0
+    - LevelNumber: 1
+      IsUnlocked: 1
+      StarsAwarded: 0
   CoinValue: 1
   BigCoinValue: 10
   EnemyValue: 50
@@ -16359,6 +16366,7 @@ MonoBehaviour:
   Lever: {fileID: 1375131030}
   EnemySpawner: {fileID: 241472924}
   SignPlatform: {fileID: 794192722}
+  LevelCompleteMenu: {fileID: 131406011}
 --- !u!1001 &1976908731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17697,11 +17705,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9091869369997400403, guid: fcb0fab6a04b3ee4aa153380a5d117b2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 37.1
+      value: 96.7
       objectReference: {fileID: 0}
     - target: {fileID: 9091869369997400403, guid: fcb0fab6a04b3ee4aa153380a5d117b2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.4
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 9091869369997400403, guid: fcb0fab6a04b3ee4aa153380a5d117b2, type: 3}
       propertyPath: m_LocalPosition.z

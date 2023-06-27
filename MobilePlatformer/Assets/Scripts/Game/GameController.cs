@@ -43,6 +43,8 @@ public class GameController : MonoBehaviour
 
     private bool _timerOn;
 
+    public GameObject LevelCompleteMenu;
+
 
     private void Awake()
     {
@@ -110,6 +112,12 @@ public class GameController : MonoBehaviour
         }
         GameData.Lives = 3;
         UpdateHearts();
+        foreach (var level in GameData.LevelData)
+        {
+            level.StarsAwarded = 0;
+            if (level.LevelNumber != 1)
+                level.IsUnlocked = false;
+        }
 
         UI.CoinCount.text = $"x {GameData.CoinCount}";
         UI.Score.text = $"Score: {GameData.Score}";
@@ -373,5 +381,23 @@ public class GameController : MonoBehaviour
     public int GetScore()
     {
         return GameData.Score;
+    }
+
+
+    public void SetStarsAwarded(int levelNumber, int numberOfStars)
+    {
+        GameData.LevelData[levelNumber].StarsAwarded = numberOfStars;
+    }
+
+
+    public void UnlockLevel(int levelNumber)
+    {
+        GameData.LevelData[levelNumber].IsUnlocked = true;
+    }
+
+
+    public void LevelComplete()
+    {
+        LevelCompleteMenu.SetActive(true);
     }
 }

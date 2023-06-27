@@ -25,6 +25,14 @@ public class LeverController : MonoBehaviour
 
             SFXController.Instance.ShowPlayerLanding(transform.position);
             SpriteRenderer.sprite = LeverPulled;
+
+            Invoke("ShowLevelCompleteMenu", 3f);
         }
+    }
+
+
+    private void ShowLevelCompleteMenu()
+    {
+        GameController.Instance.LevelComplete();
     }
 }
