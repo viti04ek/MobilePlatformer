@@ -54,4 +54,16 @@ public class DataController : MonoBehaviour
         fileStream.Close();
         Debug.Log("Data saved");
     }
+
+
+    public bool IsUnlocked(int levelNumber)
+    {
+        return GameData.LevelData[levelNumber].IsUnlocked;
+    }
+
+
+    public int GetStars(int levelNumber)
+    {
+        return GameData.LevelData[levelNumber].StarsAwarded;
+    }
 }
