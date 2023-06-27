@@ -962,6 +962,7 @@ GameObject:
   - component: {fileID: 1799596807}
   - component: {fileID: 1799596806}
   - component: {fileID: 1799596805}
+  - component: {fileID: 1799596808}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -1034,8 +1035,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1352976599}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+      - m_Target: {fileID: 1799596808}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -1043,7 +1044,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Gameplay
+          m_StringArgument: World1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1799596806
@@ -1084,3 +1085,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799596803}
   m_CullTransparentMesh: 1
+--- !u!114 &1799596808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799596803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59aeecc77e268fe4281cf009cf4f27f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
