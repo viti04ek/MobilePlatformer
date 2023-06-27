@@ -79,6 +79,15 @@ public class DataController : MonoBehaviour
     }
 
 
+    public void SaveData(GameData data)
+    {
+        FileStream fileStream = new FileStream(_dataFilePath, FileMode.Create);
+        BinaryFormatter.Serialize(fileStream, GameData);
+        fileStream.Close();
+        Debug.Log("Data saved");
+    }
+
+
     public bool IsUnlocked(int levelNumber)
     {
         return GameData.LevelData[levelNumber].IsUnlocked;

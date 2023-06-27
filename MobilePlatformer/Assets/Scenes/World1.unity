@@ -6106,7 +6106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LockedButton: {fileID: 21300360, guid: 7f51b2aedd529424a82328b6fb31a7a5, type: 3}
   UnlockedButton: {fileID: 21300020, guid: 7f51b2aedd529424a82328b6fb31a7a5, type: 3}
-  SceneName: Gameplay
+  SceneName: 1
 --- !u!1 &1642578811
 GameObject:
   m_ObjectHideFlags: 0

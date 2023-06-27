@@ -43,8 +43,6 @@ public class GameController : MonoBehaviour
 
     private bool _timerOn;
 
-    public GameObject LevelCompleteMenu;
-
 
     private void Awake()
     {
@@ -58,6 +56,10 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        DataController.Instance.RefreshData();
+        GameData = DataController.Instance.GameData;
+        RefreshUI();
+
         _timeLeft = MaxTime;
         _timerOn = true;
         HandleFirstBoot();
@@ -68,77 +70,29 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            ResetData();
-
         if (_timeLeft > 0 && _timerOn)
             UpdateTimer();
     }
 
 
-    public void SaveData()
+    public void RefreshUI()
     {
-        FileStream fs = new FileStream(_dataFilePath, FileMode.Create);
-        BinaryFormatter.Serialize(fs, GameData);
-        fs.Close();
-    }
-
-
-    public void LoadData()
-    {
-        if (File.Exists(_dataFilePath))
-        {
-            FileStream fs = new FileStream(_dataFilePath, FileMode.Open);
-            GameData = (GameData)BinaryFormatter.Deserialize(fs);
-
-            UI.CoinCount.text = $"x {GameData.CoinCount}";
-            UI.Score.text = $"Score: {GameData.Score}";
-
-            Debug.Log("Data saved");
-            fs.Close();
-        }
-    }
-
-
-    private void ResetData()
-    {
-        FileStream fs = new FileStream(_dataFilePath, FileMode.Create);
-
-        GameData.CoinCount = 0;
-        GameData.Score = 0;
-        for (int keyNumber = 0; keyNumber < 3; keyNumber++)
-        {
-            GameData.KeyFound[keyNumber] = false;
-        }
-        GameData.Lives = 3;
-        UpdateHearts();
-        foreach (var level in GameData.LevelData)
-        {
-            level.StarsAwarded = 0;
-            if (level.LevelNumber != 1)
-                level.IsUnlocked = false;
-        }
-
         UI.CoinCount.text = $"x {GameData.CoinCount}";
         UI.Score.text = $"Score: {GameData.Score}";
-
-        BinaryFormatter.Serialize(fs, GameData);
-        fs.Close();
-        Debug.Log("Data reset");
     }
 
 
     private void OnEnable()
     {
         Debug.Log("Data loaded");
-        LoadData();
+        RefreshUI();
     }
 
 
     private void OnDisable()
     {
         Debug.Log("Data saved");
-        SaveData();
+        DataController.Instance.SaveData(GameData);
     }
 
 
@@ -190,7 +144,7 @@ public class GameController : MonoBehaviour
 
     private void RestartLevel()
     {
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 
@@ -301,12 +255,12 @@ public class GameController : MonoBehaviour
         if (GameData.Lives == 0)
         {
             GameData.Lives = 3;
-            SaveData();
+            DataController.Instance.SaveData(GameData);
             Invoke("GameOver", RestartDelay);
         }
         else
         {
-            SaveData();
+            DataController.Instance.SaveData(GameData);
             Invoke("RestartLevel", RestartDelay);
         }
     }
@@ -398,6 +352,7 @@ public class GameController : MonoBehaviour
 
     public void LevelComplete()
     {
-        LevelCompleteMenu.SetActive(true);
+        UI.MobileUI.SetActive(false);
+        UI.LevelCompleteMenu.SetActive(true);
     }
 }
