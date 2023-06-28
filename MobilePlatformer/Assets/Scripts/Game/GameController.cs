@@ -279,7 +279,11 @@ public class GameController : MonoBehaviour
 
     private void GameOver()
     {
+        if (_timerOn)
+            _timerOn = false;
+
         UI.GameOver.SetActive(true);
+        UI.GameOver.gameObject.GetComponent<RectTransform>().DOAnchorPosY(0, 0.7f, false);
     }
 
 

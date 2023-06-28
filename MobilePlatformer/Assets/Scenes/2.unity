@@ -3242,11 +3242,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &354217425 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1036942191701789802, guid: ec3270d0c8a967d49a52caf3fcf31568, type: 3}
-  m_PrefabInstance: {fileID: 774224959}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &384413380 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1036942190445836595, guid: ec3270d0c8a967d49a52caf3fcf31568, type: 3}
@@ -3610,6 +3605,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 20977387}
+    - target: {fileID: 2096050124485914594, guid: ec3270d0c8a967d49a52caf3fcf31568, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec3270d0c8a967d49a52caf3fcf31568, type: 3}
 --- !u!1 &774224960 stripped
@@ -3625,6 +3624,11 @@ GameObject:
 --- !u!1 &774224962 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1259454190, guid: ec3270d0c8a967d49a52caf3fcf31568, type: 3}
+  m_PrefabInstance: {fileID: 774224959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &774224963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2096050124485914594, guid: ec3270d0c8a967d49a52caf3fcf31568, type: 3}
   m_PrefabInstance: {fileID: 774224959}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &781775239
@@ -7174,7 +7178,7 @@ MonoBehaviour:
     Heart3: {fileID: 20500486}
     EmptyHeart: {fileID: 21300000, guid: fcf2c01e77e074b6bb02a23973787849, type: 3}
     FullHeart: {fileID: 21300000, guid: 41bb06b56d48d4c04ad6f95c8d753835, type: 3}
-    GameOver: {fileID: 354217425}
+    GameOver: {fileID: 774224963}
     LevelCompleteMenu: {fileID: 86266508}
     MobileUI: {fileID: 233110168}
     Pause: {fileID: 774224962}

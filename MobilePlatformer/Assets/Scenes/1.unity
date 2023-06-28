@@ -6579,11 +6579,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1367060632 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1036942191701789802, guid: ec3270d0c8a967d49a52caf3fcf31568, type: 3}
-  m_PrefabInstance: {fileID: 1036942190887812338}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1368207436 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013913478392, guid: 1f3d9da7ef9c84d72b8af121660b4a27, type: 3}
@@ -13181,7 +13176,7 @@ MonoBehaviour:
     Heart3: {fileID: 189408382}
     EmptyHeart: {fileID: 21300000, guid: fcf2c01e77e074b6bb02a23973787849, type: 3}
     FullHeart: {fileID: 21300000, guid: 41bb06b56d48d4c04ad6f95c8d753835, type: 3}
-    GameOver: {fileID: 1367060632}
+    GameOver: {fileID: 1036942190887812339}
     LevelCompleteMenu: {fileID: 131406011}
     MobileUI: {fileID: 2086667877}
     Pause: {fileID: 1259454190}
@@ -13656,6 +13651,11 @@ PrefabInstance:
       objectReference: {fileID: 20977387}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec3270d0c8a967d49a52caf3fcf31568, type: 3}
+--- !u!1 &1036942190887812339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2096050124485914594, guid: ec3270d0c8a967d49a52caf3fcf31568, type: 3}
+  m_PrefabInstance: {fileID: 1036942190887812338}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1628914134766242133
 PrefabInstance:
   m_ObjectHideFlags: 0
