@@ -396,6 +396,7 @@
 "Assets/Scripts/Items/LevelDone.cs"
 "Assets/Scripts/Items/LeverController.cs"
 "Assets/Scripts/Items/SignController.cs"
+"Assets/Scripts/LoadingController.cs"
 "Assets/Scripts/Platfroms/MovingPlatform.cs"
 "Assets/Scripts/Platfroms/SamplePlatform.cs"
 "Assets/Scripts/Player/FeetController.cs"

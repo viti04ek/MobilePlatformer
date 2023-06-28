@@ -80,6 +80,7 @@ public class ButtonController : MonoBehaviour
 
     private void LoadScene()
     {
+        LoadingController.Instance.ShowLoading();
         SceneManager.LoadScene(SceneName);
     }
 }
