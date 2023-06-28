@@ -415,6 +415,8 @@
 "Assets/Scripts/UI/Menu/RefreshData.cs"
 "Assets/Scripts/UI/Menu/Router.cs"
 "Assets/Scripts/UI/Menu/SceneChanger.cs"
+"Assets/Scripts/UI/Menu/SettingsController.cs"
+"Assets/Scripts/UI/Menu/SettingsToggle.cs"
 "Assets/Scripts/UI/UI.cs"
 "Assets/Scripts/UI/UIController.cs"
 -langversion:9.0
