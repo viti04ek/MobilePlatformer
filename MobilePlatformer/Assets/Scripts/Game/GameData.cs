@@ -15,4 +15,7 @@ public class GameData
     public bool IsFirstBoot;
 
     public LevelData[] LevelData;
+
+    public bool PlaySound;
+    public bool PlayMusic;
 }

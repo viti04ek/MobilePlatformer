@@ -3582,10 +3582,6 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 20977387}
-    - target: {fileID: 1036942190874371149, guid: ec3270d0c8a967d49a52caf3fcf31568, type: 3}
-      propertyPath: LevelNumber
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1036942191147688930, guid: ec3270d0c8a967d49a52caf3fcf31568, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3616,6 +3612,21 @@ PrefabInstance:
       objectReference: {fileID: 20977387}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec3270d0c8a967d49a52caf3fcf31568, type: 3}
+--- !u!1 &774224960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1552875236, guid: ec3270d0c8a967d49a52caf3fcf31568, type: 3}
+  m_PrefabInstance: {fileID: 774224959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &774224961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2054355127, guid: ec3270d0c8a967d49a52caf3fcf31568, type: 3}
+  m_PrefabInstance: {fileID: 774224959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &774224962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1259454190, guid: ec3270d0c8a967d49a52caf3fcf31568, type: 3}
+  m_PrefabInstance: {fileID: 774224959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &781775239
 GameObject:
   m_ObjectHideFlags: 0
@@ -4387,6 +4398,12 @@ MonoBehaviour:
   SoundOn: 1
   BGMusic: {fileID: 304854246}
   BGMusicOn: 0
+  ButtonSound: {fileID: 774224960}
+  ButtonMusic: {fileID: 774224961}
+  SoundOnImage: {fileID: 21300314, guid: 7f51b2aedd529424a82328b6fb31a7a5, type: 3}
+  SoundOffImage: {fileID: 21300318, guid: 7f51b2aedd529424a82328b6fb31a7a5, type: 3}
+  MusicOnImage: {fileID: 21300298, guid: 7f51b2aedd529424a82328b6fb31a7a5, type: 3}
+  MusicOffImage: {fileID: 21300302, guid: 7f51b2aedd529424a82328b6fb31a7a5, type: 3}
 --- !u!1 &1595095258
 GameObject:
   m_ObjectHideFlags: 0
@@ -7137,6 +7154,8 @@ MonoBehaviour:
     - LevelNumber: 1
       IsUnlocked: 1
       StarsAwarded: 0
+    PlaySound: 0
+    PlayMusic: 0
   CoinValue: 1
   BigCoinValue: 10
   EnemyValue: 50
@@ -7158,6 +7177,7 @@ MonoBehaviour:
     GameOver: {fileID: 354217425}
     LevelCompleteMenu: {fileID: 86266508}
     MobileUI: {fileID: 233110168}
+    Pause: {fileID: 774224962}
     BossHealth: {fileID: 384413380}
   MaxTime: 120
   BigCoin: {fileID: 4902406383016613973, guid: 7445464ea232d3f40b5799aa7ac30988, type: 3}

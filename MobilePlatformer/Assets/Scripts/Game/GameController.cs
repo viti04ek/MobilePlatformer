@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.UI;
+using DG.Tweening;
 
 
 public enum Item
@@ -376,16 +377,24 @@ public class GameController : MonoBehaviour
         if (UI.MobileUI.activeInHierarchy)
             UI.MobileUI.SetActive(false);
 
+        UI.Pause.gameObject.GetComponent<RectTransform>().DOAnchorPosY(0, 0.7f, false);
+        Invoke("SetPause", 1.1f);
+    }
+
+
+    private void SetPause()
+    {
         _isPaused = true;
     }
 
 
     public void HidePausePanel()
     {
-        UI.Pause.SetActive(false);
+        _isPaused = false;
+        //UI.Pause.SetActive(false);
         if (!UI.MobileUI.activeInHierarchy)
             UI.MobileUI.SetActive(true);
 
-        _isPaused = false;
+        UI.Pause.gameObject.GetComponent<RectTransform>().DOAnchorPosY(Screen.height, 0.7f, false);
     }
 }

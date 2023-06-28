@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioController : MonoBehaviour
 {
@@ -8,10 +9,17 @@ public class AudioController : MonoBehaviour
     public PlayerAudio PlayerAudio;
     public AudioFX AudioFX;
     public Transform Player;
-    public bool SoundOn = true;
+    public bool SoundOn;
 
     public GameObject BGMusic;
     public bool BGMusicOn;
+
+    public GameObject ButtonSound;
+    public GameObject ButtonMusic;
+    public Sprite SoundOnImage;
+    public Sprite SoundOffImage;
+    public Sprite MusicOnImage;
+    public Sprite MusicOffImage;
 
 
     private void Awake()
@@ -23,8 +31,27 @@ public class AudioController : MonoBehaviour
 
     private void Start()
     {
-        if (BGMusicOn)
+        if (DataController.Instance.GameData.PlayMusic)
+        {
             BGMusic.SetActive(true);
+            ButtonMusic.GetComponent<Image>().sprite = MusicOnImage;
+        }
+        else
+        {
+            BGMusic.SetActive(false);
+            ButtonMusic.GetComponent<Image>().sprite = MusicOffImage;
+        }
+
+        if (DataController.Instance.GameData.PlaySound)
+        {
+            SoundOn = true;
+            ButtonSound.GetComponent<Image>().sprite = SoundOnImage;
+        }
+        else
+        {
+            SoundOn = false;
+            ButtonSound.GetComponent<Image>().sprite = SoundOffImage;
+        }
     }
 
 
@@ -95,5 +122,39 @@ public class AudioController : MonoBehaviour
     {
         if (SoundOn)
             AudioSource.PlayClipAtPoint(PlayerAudio.PlayerDied, playerPos);
+    }
+
+
+    public void ToggleSound()
+    {
+        if (DataController.Instance.GameData.PlaySound)
+        {
+            SoundOn = false;
+            ButtonSound.GetComponent<Image>().sprite = SoundOffImage;
+            DataController.Instance.GameData.PlaySound = false;
+        }
+        else
+        {
+            SoundOn = true;
+            ButtonSound.GetComponent<Image>().sprite = SoundOnImage;
+            DataController.Instance.GameData.PlaySound = true;
+        }
+    }
+
+
+    public void ToggleMusic()
+    {
+        if (DataController.Instance.GameData.PlayMusic)
+        {
+            BGMusic.SetActive(false);
+            ButtonMusic.GetComponent<Image>().sprite = MusicOffImage;
+            DataController.Instance.GameData.PlayMusic = false;
+        }
+        else
+        {
+            BGMusic.SetActive(true);
+            ButtonMusic.GetComponent<Image>().sprite = MusicOnImage;
+            DataController.Instance.GameData.PlayMusic = true;
+        }
     }
 }
