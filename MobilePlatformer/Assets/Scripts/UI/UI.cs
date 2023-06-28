@@ -30,6 +30,7 @@ public class UI
     public GameObject GameOver;
     public GameObject LevelCompleteMenu;
     public GameObject MobileUI;
+    public GameObject Pause;
 
     public Slider BossHealth;
 }

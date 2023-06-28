@@ -412,6 +412,7 @@
 "Assets/Scripts/UI/Menu/LevelCompleteController.cs"
 "Assets/Scripts/UI/Menu/MenuController.cs"
 "Assets/Scripts/UI/Menu/RefreshData.cs"
+"Assets/Scripts/UI/Menu/Router.cs"
 "Assets/Scripts/UI/Menu/SceneChanger.cs"
 "Assets/Scripts/UI/UI.cs"
 "Assets/Scripts/UI/UIController.cs"

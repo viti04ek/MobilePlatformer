@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour
 
     public float RestartDelay;
 
-    public GameData GameData;
+    [HideInInspector] public GameData GameData;
     private string _dataFilePath;
     private BinaryFormatter BinaryFormatter;
 
@@ -43,6 +43,8 @@ public class GameController : MonoBehaviour
 
     private bool _timerOn;
 
+    private bool _isPaused;
+
 
     private void Awake()
     {
@@ -62,6 +64,7 @@ public class GameController : MonoBehaviour
 
         _timeLeft = MaxTime;
         _timerOn = true;
+        _isPaused = false;
         HandleFirstBoot();
         UpdateHearts();
         UI.BossHealth.gameObject.SetActive(false);
@@ -70,6 +73,11 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
+        if (_isPaused)
+            Time.timeScale = 0;
+        else
+            Time.timeScale = 1;
+
         if (_timeLeft > 0 && _timerOn)
             UpdateTimer();
     }
@@ -93,6 +101,8 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("Data saved");
         DataController.Instance.SaveData(GameData);
+
+        Time.timeScale = 1;
     }
 
 
@@ -357,5 +367,25 @@ public class GameController : MonoBehaviour
 
         UI.MobileUI.SetActive(false);
         UI.LevelCompleteMenu.SetActive(true);
+    }
+
+
+    public void ShowPausePanel()
+    {
+        UI.Pause.SetActive(true);
+        if (UI.MobileUI.activeInHierarchy)
+            UI.MobileUI.SetActive(false);
+
+        _isPaused = true;
+    }
+
+
+    public void HidePausePanel()
+    {
+        UI.Pause.SetActive(false);
+        if (!UI.MobileUI.activeInHierarchy)
+            UI.MobileUI.SetActive(true);
+
+        _isPaused = false;
     }
 }
