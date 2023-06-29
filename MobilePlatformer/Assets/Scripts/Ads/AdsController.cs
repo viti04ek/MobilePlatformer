@@ -8,8 +8,15 @@ public class AdsController : MonoBehaviour
     public static AdsController Instance;
 
     public string AndroidAdMobBannerID; // ca-app-pub-3940256099942544/6300978111
+    public string AndroidAdMobInterstitialID; // ca-app-pub-3940256099942544/1033173712
     public bool TestMode;
+    
     private BannerView _bannerView;
+    private InterstitialAd _interstitial;
+    private AdRequest _request;
+
+    public bool ShowBannerAds;
+    public bool ShowInterstitialAds;
 
 
     private void Awake()
@@ -28,7 +35,8 @@ public class AdsController : MonoBehaviour
 
     private void OnEnable()
     {
-        RequestBanner();
+        if (ShowBannerAds)
+            RequestBanner();
     }
 
 
@@ -45,13 +53,15 @@ public class AdsController : MonoBehaviour
 
     public void ShowBanner()
     {
-        _bannerView.Show();
+        if (ShowBannerAds)
+            _bannerView.Show();
     }
 
 
     public void HideBanner()
     {
-        _bannerView.Hide();
+        if (ShowBannerAds)
+            _bannerView.Hide();
     }
 
 
@@ -70,6 +80,13 @@ public class AdsController : MonoBehaviour
 
     private void OnDisable()
     {
-        _bannerView.Destroy();
+        if (ShowBannerAds)
+            _bannerView.Destroy();
+    }
+
+
+    private void RequestInterstitial()
+    {
+        //_interstitial = new InterstitialAd(AndroidAdMobInterstitialID);
     }
 }
