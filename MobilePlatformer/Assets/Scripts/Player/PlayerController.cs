@@ -38,7 +38,16 @@ public class PlayerController : MonoBehaviour
 
     public GameObject Garbage;
 
-    
+
+    private void Awake()
+    {
+        if (PlayerPrefs.HasKey("CPX"))
+        {
+            transform.position = new Vector3(PlayerPrefs.GetFloat("CPX"), PlayerPrefs.GetFloat("CPY"), transform.position.z);
+        }
+    }
+
+
     private void Update()
     {
         _isGrounded = Physics2D.OverlapBox(new Vector2(Feet.position.x, Feet.position.y), new Vector2(BoxWidth, BoxHeight), 360f, WhatIsGround);

@@ -395,6 +395,7 @@
 "Assets/Scripts/Enemies/SimpleMovement.cs"
 "Assets/Scripts/Enviroment/GarbageController.cs"
 "Assets/Scripts/Enviroment/Parallax.cs"
+"Assets/Scripts/Game/CheckpointController.cs"
 "Assets/Scripts/Game/DataController.cs"
 "Assets/Scripts/Game/GameController.cs"
 "Assets/Scripts/Game/GameData.cs"
