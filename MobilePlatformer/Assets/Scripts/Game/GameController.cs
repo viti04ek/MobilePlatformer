@@ -286,6 +286,7 @@ public class GameController : MonoBehaviour
         UI.GameOver.SetActive(true);
         UI.GameOver.gameObject.GetComponent<RectTransform>().DOAnchorPosY(0, 0.7f, false);
         AdsController.Instance.ShowBanner();
+        DeleteCheckpoint();
     }
 
 
@@ -404,5 +405,12 @@ public class GameController : MonoBehaviour
 
         UI.Pause.gameObject.GetComponent<RectTransform>().DOAnchorPosY(Screen.height, 0.7f, false);
         AdsController.Instance.HideBanner();
+    }
+
+
+    private void DeleteCheckpoint()
+    {
+        PlayerPrefs.DeleteKey("CPX");
+        PlayerPrefs.DeleteKey("CPY");
     }
 }
