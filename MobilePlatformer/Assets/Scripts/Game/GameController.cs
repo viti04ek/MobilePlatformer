@@ -81,6 +81,9 @@ public class GameController : MonoBehaviour
 
         if (_timeLeft > 0 && _timerOn)
             UpdateTimer();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            DeleteCheckpoint();
     }
 
 
